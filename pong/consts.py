@@ -24,11 +24,11 @@ PADDLE_WIDTH = 20
 # the height of the paddle
 PADDLE_HEIGHT = 100
 # the number of pixels to move the paddle per update
-PADDLE_MOVEMENT = 4
+PADDLE_MOVEMENT = 5
 
 ### BALL CONSTANTS ###
 
 # the size of the ball
 BALL_SIZE = 10
 # the velocity of the ball
-BALL_VELOCITY = 4
+BALL_VELOCITY = 5

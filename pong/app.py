@@ -148,10 +148,10 @@ def multiplayer():
 
         if ball.x < 0:
             right_score = right_score + 1
-            ball.reset()
+            ball.reset('right')
         if ball.x > 1280:
             left_score = left_score + 1
-            ball.reset()
+            ball.reset('left')
         ball.draw(screen)
 
         mid_y = 0

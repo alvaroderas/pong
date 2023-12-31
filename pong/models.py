@@ -84,6 +84,13 @@ class Player(pygame.sprite.Sprite):
     and right paddles for the players.
     """
     def __init__(self):
+        """
+        Initializes a new Player object with left and right paddles.
+
+        The left paddle is positioned at (30, 310), and the right paddle is
+        positioned at (1230, 310). Both paddles have a size of (20, 100) and
+        are initially filled with a white color.
+        """
         super(Player, self).__init__()
         self.left_paddle = pygame.Surface((20, 100))
         self.left_paddle.fill((255, 255, 255))
@@ -93,13 +100,11 @@ class Player(pygame.sprite.Sprite):
         self.right_rect = self.right_paddle.get_rect(topleft=(1230, 310))
 
 player = Player()
-
 class Ball():
     """
     The Ball class represents the ball in the Pong game. It manages the ball's
     position, movement, collision, and resetting.
     """
-
     def __init__(self):
         """
         Initializes a Ball object with default starting coordinates and
@@ -159,11 +164,20 @@ class Ball():
                     velocity_y = difference_in_y / reduction
                     self.velocity_y = -1 * velocity_y
 
-    def reset(self):
+    def reset(self, scoring_player):
         """
-        Resets the ball to its initial position.
+        Resets the ball to its initial position and direction.
+
+        Parameter scoring_player: the player that scored the point
+        Precondition: scoring_player is a String, either left or right
         """
         self.x = 637
         self.y = 350
-        self.velocity_x = BALL_VELOCITY
         self.velocity_y = 0
+
+        if scoring_player == 'left':
+            self.velocity_x = BALL_VELOCITY
+        elif scoring_player == 'right':
+            self.velocity_x = -BALL_VELOCITY
+        else:
+            raise ValueError("Invalid scoring player")
