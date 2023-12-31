@@ -10,4 +10,4 @@ Initially coded in 2022, updated with documentation in 2023.
 ![Win](imgs/wingame.png)
 
 ## How to play
-To play, simply download all the files and run the "app.py" file! Enjoy! :)
+To play, simply download all the files and run the "app.py" file. Enjoy! :)
