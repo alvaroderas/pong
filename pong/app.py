@@ -81,7 +81,7 @@ def controls():
 
 def multiplayer():
     """
-    initiates the multiplayer mode of the Pong game. It manages the game loop,
+    Initiates the multiplayer mode of the Pong game. It manages the game loop,
     handles player input, and updates the screen accordingly. It includes a
     nested function play_again() that prompts the user to play again or return
     to the main menu after the game ends
@@ -195,7 +195,7 @@ def multiplayer():
 
 def play():
     """
-    displays the main menu screen with options to start a multiplayer game or
+    Displays the main menu screen with options to start a multiplayer game or
     return to the main menu. It handles mouse input for the buttons on the main
     menu.
     """
