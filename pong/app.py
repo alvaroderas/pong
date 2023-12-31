@@ -91,6 +91,13 @@ def multiplayer():
     left_score = 0
 
     def play_again():
+        """
+        Displays a prompt asking the user if they want to play the game again.
+
+        Returns:
+        - True if the user chooses to play again.
+        - False if the user chooses not to play again.
+        """
         while True:
             screen.fill("black")
 
