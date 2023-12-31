@@ -1,9 +1,9 @@
 """
 Primary module for Pong
 
-This module contains classes and functions that initialize and control the game.
+This module contains functions that initialize and control the whole game.
 Upon running the application, this program displays the main menu and controls
-the screen based on the user's actions. It controls the whole game.
+the screen based on the user's actions.
 
 Author: Alvaro Deras
 Date: December 30, 2023
