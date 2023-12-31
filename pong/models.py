@@ -16,7 +16,7 @@ class Button():
     creating interactive buttons with different colors for normal and hovering
     states depending on the user's cursor.
     """
-	def __init__(self, pos, text_input, font, base_color, hovering_color):
+    def __init__(self, pos, text_input, font, base_color, hovering_color):
         """
         Initializes a Button object with specified position, text input, font,
         base color, and hovering color.
@@ -36,46 +36,46 @@ class Button():
         Parameter hovering_color: the color when hovering over the text
         Precondition: hovering_color is a String representing a valid color
         """
-		self.x_pos = pos[0]
-		self.y_pos = pos[1]
-		self.font = font
-		self.base_color, self.hovering_color = base_color, hovering_color
-		self.text_input = text_input
-		self.text = self.font.render(self.text_input, True, self.base_color)
+        self.x_pos = pos[0]
+        self.y_pos = pos[1]
+        self.font = font
+        self.base_color, self.hovering_color = base_color, hovering_color
+        self.text_input = text_input
+        self.text = self.font.render(self.text_input, True, self.base_color)
 
-		self.text_rect = self.text.get_rect(center=(self.x_pos, self.y_pos))
+        self.text_rect = self.text.get_rect(center=(self.x_pos, self.y_pos))
 
-	def update(self, screen):
+    def update(self, screen):
         """
         Updates the button on the given screen.
 
         Parameter screen: the screen of the application
         Precondition: screen is a Pygame surface object
         """
-		screen.blit(self.text, self.text_rect)
+        screen.blit(self.text, self.text_rect)
 
-	def check_input(self, position):
+    def check_input(self, position):
         """
         Returns whether the given position is within the bounds of the button.
 
         Parameter position: the x, y coordinates of the mouse
         Precondition: position is a tuple or list containing two numerical values
         """
-		if position[0] in range(self.text_rect.left, self.text_rect.right) and position[1] in range(self.text_rect.top, self.text_rect.bottom):
-			return True
-		return False
+        if position[0] in range(self.text_rect.left, self.text_rect.right) and position[1] in range(self.text_rect.top, self.text_rect.bottom):
+            return True
+        return False
 
-	def change_color(self, position):
+    def change_color(self, position):
         """
         Changes the button color based on the mouse position.
 
         Parameter position: the x, y coordinates of the mouse
         Precondition: position is a tuple or list containing two numerical values
         """
-		if position[0] in range(self.text_rect.left, self.text_rect.right) and position[1] in range(self.text_rect.top, self.text_rect.bottom):
-			self.text = self.font.render(self.text_input, True, self.hovering_color)
-		else:
-			self.text = self.font.render(self.text_input, True, self.base_color)
+        if position[0] in range(self.text_rect.left, self.text_rect.right) and position[1] in range(self.text_rect.top, self.text_rect.bottom):
+            self.text = self.font.render(self.text_input, True, self.hovering_color)
+        else:
+            self.text = self.font.render(self.text_input, True, self.base_color)
 
 
 class Player(pygame.sprite.Sprite):
@@ -87,10 +87,10 @@ class Player(pygame.sprite.Sprite):
         super(Player, self).__init__()
         self.left_paddle = pygame.Surface((20, 100))
         self.left_paddle.fill((255, 255, 255))
-        self.left_rect = self.left_paddle.get_rect(topleft = (30, 310))
+        self.left_rect = self.left_paddle.get_rect(topleft=(30, 310))
         self.right_paddle = pygame.Surface((20, 100))
         self.right_paddle.fill((255, 255, 255))
-        self.right_rect = self.right_paddle.get_rect(topleft = (1230, 310))
+        self.right_rect = self.right_paddle.get_rect(topleft=(1230, 310))
 
 player = Player()
 
@@ -146,7 +146,7 @@ class Ball():
                     self.velocity_x = self.velocity_x * -1
                     middle_y = player.left_rect.y + 50
                     difference_in_y = middle_y - self.y
-                    reduction = 50/self.velocity
+                    reduction = 50 / self.velocity
                     velocity_y = difference_in_y / reduction
                     self.velocity_y = -1 * velocity_y
         else:
@@ -155,7 +155,7 @@ class Ball():
                     self.velocity_x = self.velocity_x * -1
                     middle_y = player.right_rect.y + 50
                     difference_in_y = middle_y - self.y
-                    reduction = 50/self.velocity
+                    reduction = 50 / self.velocity
                     velocity_y = difference_in_y / reduction
                     self.velocity_y = -1 * velocity_y
 
